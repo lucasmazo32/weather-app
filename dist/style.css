@@ -1,2 +1,2 @@
-*{box-sizing:border-box}
+*{box-sizing:border-box}form{display:flex;flex-wrap:wrap}.city{flex-basis:80%}.temperature{display:flex;justify-content:center;align-items:center;flex-basis:20%}.input-radio{display:none}.unit-radio{flex-basis:40%;text-align:center;cursor:pointer;border:1px #6495ed solid;transition:all 0.4s ease;opacity:0.6;margin:0}.unit-radio:hover{background-color:#6495ed;opacity:1}.unit-radio:first-of-type{border-top-left-radius:10%;border-bottom-left-radius:10%}.unit-radio:last-of-type{border-top-right-radius:10%;border-bottom-right-radius:10%}.input-radio:checked+.unit-radio{background-color:#6495ed;opacity:1}
 

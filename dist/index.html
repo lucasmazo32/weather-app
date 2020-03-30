@@ -2,9 +2,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
   <title>Weather App</title>
 </head>
 <body>
-  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-6">
+        <form>
+          <div class="city">
+            <input type="text" class="form-control" name="s" id="city-input" placeholder="City">
+          </div>
+          <div class="temperature">
+            <input class="input-radio" type="radio" name="units" checked id="metric">
+            <label for="metric" class="unit-radio">°C</label>
+            <input class="input-radio" type="radio" name="units" id="imperial">
+            <label for="imperial" class="unit-radio">°F</label>
+          </div>
+          <input type="submit" value="Search" class="btn btn-dark">
+        </form>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+  <script src="./main.js"></script>
 </body>
 </html>
