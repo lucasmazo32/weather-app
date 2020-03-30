@@ -7,6 +7,10 @@ body {
   font-family: 'Signika Negative', sans-serif;
 }
 
+.tx-cap {
+  text-transform: capitalize;
+}
+
 .form-control {
   border: 1px solid $radio-color;
   background-color: rgb(233, 233, 233);
@@ -89,22 +93,34 @@ form {
 
 // DOM changes
 
-.city-name.unactive {
-  opacity: 0;
-  pointer-events: none;
+.current-temp-container {
+  display: flex;
+  justify-content: center;
 }
 
-.city-name {
-  opacity: 1;
-  transition: opacity 1s ease;
-}
-
-.condition.unactive {
-  opacity: 0;
-  pointer-events: none;
+.condition-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
 
 .condition {
-  transition: opacity 1s ease;
+  width: 100px;
+  height: 100px;
+  align-self: center;
+}
+
+.city-info.unactive {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, height 1s ease;
+}
+
+.city-info {
+  margin: 0 auto;
   opacity: 1;
+  height: auto;
+  overflow: hidden;
+  transition: opacity 0.5s ease, height 1s ease;
 }

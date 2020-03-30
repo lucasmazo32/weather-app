@@ -10,7 +10,7 @@
 </head>
 <body>
   <div class="container-fluid">
-    <h1 class="ta-center">Weather App</h1>
+    <h1 class="ta-center">Weather Forecast</h1>
     <div class="row">
       <div class="col"></div>
       <div class="col-lg-6 col-md-8">
@@ -30,9 +30,19 @@
       <div class="col"></div>
     </div>
     <div class="row">
-      <div class="city-info">
-        <h2 class="city-name unactive"></h2>
-        <img src="#" alt="condition" class="condition unactive">
+      <div class="city-info unactive ta-center">
+        <h2 class="city-name"></h2>
+        <div class="current-temp-container">
+          <h3 class="curr-temp"></h3>&nbsp;<h3 class="temp-unit"></h3>
+        </div>
+        <div class="condition-container">
+          <img src="#" alt="condition" class="condition">
+          <label class="text-condition tx-cap"></label>
+        </div>
+        <span class="min-temp"></span><span class="temp-unit"></span><span>-</span>
+        <span class="max-temp"></span><span class="temp-unit"></span>
+        <br>
+        <span>Humidity: </span><span class="humidity"></span><span>%</span>
       </div>
     </div>
   </div>
