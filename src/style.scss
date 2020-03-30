@@ -1,4 +1,36 @@
-$radio-color: cornflowerblue;
+$radio-color: #364958;
+$bk-color: #8DA7BE;
+$ltr-color: #95B2B8;
+
+body {
+  background-color: $bk-color;
+  font-family: 'Signika Negative', sans-serif;
+}
+
+.form-control {
+  border: 1px solid $radio-color;
+  background-color: rgb(233, 233, 233);
+}
+
+.btn-custom {
+  background-color: $radio-color;
+  color: $bk-color;
+  margin: 0 auto;
+  flex-basis: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  transition: all 0.4s ease;
+  &:hover {
+    color: #C9E4CA;
+  }
+}
+
+.ta-center {
+  text-align: center;
+}
 
 * {
   box-sizing: border-box;
@@ -11,6 +43,7 @@ form {
 
 .city {
   flex-basis: 80%;
+  position: relative;
 }
 
 .temperature {
@@ -25,15 +58,17 @@ form {
 }
 
 .unit-radio {
+  font-family: 'Sen', sans-serif;
   flex-basis: 40%;
   text-align: center;
   cursor: pointer;
   border: 1px $radio-color solid;
   transition: all 0.4s ease;
-  opacity: 0.6;
+  opacity: 0.4;
   margin: 0;
   &:hover {
     background-color: $radio-color;
+    color: $ltr-color;
     opacity: 1;
   }
   &:first-of-type {
@@ -48,5 +83,28 @@ form {
 
 .input-radio:checked + .unit-radio {
   background-color: $radio-color;
+  color: $ltr-color;
+  opacity: 1;
+}
+
+// DOM changes
+
+.city-name.unactive {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.city-name {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.condition.unactive {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.condition {
+  transition: opacity 1s ease;
   opacity: 1;
 }
