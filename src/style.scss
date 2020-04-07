@@ -1,9 +1,10 @@
 $radio-color: #364958;
-$bk-color: #8DA7BE;
-$ltr-color: #95B2B8;
+$bk-color: #202442;
+$ltr-color: #E7E9F7;
 
 body {
   background-color: $bk-color;
+  color: $ltr-color;
   font-family: 'Signika Negative', sans-serif;
 }
 
@@ -123,4 +124,131 @@ form {
   height: auto;
   overflow: hidden;
   transition: opacity 0.5s ease, height 1s ease;
+}
+
+// for mobile version
+
+@media only screen and (max-width: 500px) {
+  
+  .app-title {
+    font-size: 1.2rem;
+    margin-top: 2%;
+  }
+
+  .form-control {
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid gray;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    &::placeholder {
+      color: gray;
+    }
+    &:focus {
+      background-color: inherit;
+      border-color: inherit;
+      box-shadow: none;
+      color: $ltr-color;
+    }
+  }
+
+  .btn-custom {
+    background-color: inherit;
+  }
+
+  .search-icon {
+    color: $ltr-color;
+    position: absolute;
+    top: calc(50% - 0.5rem);
+    left: calc(50% - 0.5rem);
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .input-radio:checked + .unit-radio {
+    color: $ltr-color;
+    background-color: inherit;
+    border: 1px solid $ltr-color;
+    opacity: 1;
+  }
+
+  .initial-anim {
+    /*
+    animation: starting 1.5s ease;
+    opacity: 0;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+    */
+  }
+
+  .app-title {
+    /*
+    position: relative;
+    opacity: 0;
+    animation: startingTit 1s ease;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    */
+  }
+
+  .today {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .condition {
+    width: 50px;
+    height: 50px;
+  }
+
+  .today-text {
+    h4 {
+      margin: 0;
+    }
+    span {
+      font-size: 0.8rem;
+    }
+  }
+
+  .current-temp-container {
+    margin: 20px;
+    * {
+      margin: 0;
+    }
+    .curr-temp {
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+  }
+
+  .curr-unit {
+    font-size: 1rem;
+  }
+
+  .city-span {
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes starting {
+  from { 
+    opacity: 0;
+    top: 100px;
+   }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes startingTit {
+  from { 
+    opacity: 0;
+    top: -50px;
+   }
+  to {
+    opacity: 1;
+    top: 0;
+  }
 }

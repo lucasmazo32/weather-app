@@ -1,3 +1,5 @@
+import getDate from './getDate';
+
 const cityName = document.querySelector('.city-name');
 const container = document.querySelector('.city-info');
 const imgCondition = document.querySelector('.condition');
@@ -7,6 +9,7 @@ const maxTemp = document.querySelector('.max-temp');
 const currTemp = document.querySelector('.curr-temp');
 const textCondition = document.querySelector('.text-condition');
 const humidity = document.querySelector('.humidity');
+const tempFeel = document.querySelector('.temp-feel');
 
 const tempDom = (system) => {
   if (system === 'metric') {
@@ -36,13 +39,15 @@ const unactiveToggle = (allElements) => {
 const domChanges = (data, system) => {
   cityName.innerHTML = `${data.name}, ${data.sys.country}`;
   imgCondition.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-  currTemp.innerHTML = data.main.temp;
-  minTemp.innerHTML = data.main.temp_min;
-  maxTemp.innerHTML = data.main.temp_max;
+  currTemp.innerHTML = parseInt(data.main.temp);
+  minTemp.innerHTML = parseInt(data.main.temp_min);
+  maxTemp.innerHTML = parseInt(data.main.temp_max);
   textCondition.innerHTML = data.weather[0].description;
   humidity.innerHTML = data.main.humidity;
+  tempFeel.innerHTML = parseInt(data.main.feels_like);
   unactiveToggle([container]);
   tempDom(system);
+  getDate();
 };
 
 export default domChanges;
