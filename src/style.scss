@@ -126,6 +126,16 @@ form {
   transition: opacity 0.5s ease, height 1s ease;
 }
 
+// icon in search
+
+.fas {
+  display: none;
+}
+
+.search-text {
+  color: $ltr-color;
+}
+
 // for mobile version
 
 @media only screen and (max-width: 500px) {
@@ -165,6 +175,14 @@ form {
     height: 1rem;
   }
 
+  .fas {
+    display: block;
+  }
+
+  .search-text {
+    display: none;
+  }
+
   .input-radio:checked + .unit-radio {
     color: $ltr-color;
     background-color: inherit;
@@ -172,7 +190,7 @@ form {
     opacity: 1;
   }
 
-  .initial-anim {
+  .initial-anim.visible {
     animation: starting 1.5s ease;
     opacity: 0;
     animation-delay: 1.5s;

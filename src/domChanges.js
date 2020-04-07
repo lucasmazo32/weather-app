@@ -39,12 +39,12 @@ const unactiveToggle = (allElements) => {
 const domChanges = (data, system) => {
   cityName.innerHTML = `${data.name}, ${data.sys.country}`;
   imgCondition.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-  currTemp.innerHTML = parseInt(data.main.temp);
-  minTemp.innerHTML = parseInt(data.main.temp_min);
-  maxTemp.innerHTML = parseInt(data.main.temp_max);
+  currTemp.innerHTML = Number(data.main.temp);
+  minTemp.innerHTML = Number(data.main.temp_min);
+  maxTemp.innerHTML = Number(data.main.temp_max);
   textCondition.innerHTML = data.weather[0].description;
   humidity.innerHTML = data.main.humidity;
-  tempFeel.innerHTML = parseInt(data.main.feels_like);
+  tempFeel.innerHTML = Number(data.main.feels_like);
   unactiveToggle([container]);
   tempDom(system);
   getDate();
