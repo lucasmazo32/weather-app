@@ -1,4 +1,5 @@
 import domChanges from './domChanges';
+import gif from './gifApi';
 
 const noCity = document.querySelector('.no-city');
 
@@ -10,6 +11,7 @@ const lookWeather = async (city, system) => {
   } else {
     noCity.innerHTML = '';
     domChanges(data, system);
+    gif(data.weather[0].description);
   }
 };
 
